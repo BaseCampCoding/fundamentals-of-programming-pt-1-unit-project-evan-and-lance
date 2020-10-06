@@ -26,7 +26,7 @@ while True:
         print('You have prepared:')
         for i in prepared_food:
             print(f'- {i}')
-    station_choice = input('Which station do you need? ').lower()
+    station_choice = input("Which station do you need? (Type 'c' to confirm): ").lower()
     if len(station_choice) > 0:
         if station_choice[0] == 'b':
             # Burger station
@@ -79,33 +79,10 @@ while True:
                     else:
                         print('Make sure to have a pattie cooked first!')
                         time.sleep(0.75)
-    if station_choice[0] == 'b':
-        # Burger station #############################
-        print('You are at the Burger Station')
-        cooked = False
-        progress = 0
-        while True and progress < 2:
-            choice = input('Grill or Assembly? ')
-            choice = choice .lower()
-            if choice[0] == 'g':
-                if not cooked:
-                    input('Press Enter to start grilling')
-                    print('Pattie is cooking...')
-                    while True:
-                        time.sleep(10)
-                        input('Press Enter to flip pattie')
-                        print('Pattie is cooking...')
-                        time.sleep(10)
-                        break
-                    print('Pattie is done')
-                    time.sleep(0.75)
-                    cooked = True
-                    progress += 1
-                else:
-                    print('Please choose one of the provided actions')
-                    time.sleep(1)
             prepared_food.append(burger)
+
         if station_choice[0] == 'f':
+            # Frier station
             print('You are at the Frier Station')
             fried = False
             while True and not fried:
@@ -126,53 +103,33 @@ while True:
                 else:
                     print("We don't have that")
                     time.sleep(0.75)
-            
-                time.sleep(0.25)
-                print('Assemble burger: (Type ingredients to add)')
-                print("Add ingredient or type 'q' to quit")
-                while True:
-                    addition = input()
-                    if addition != 'q':
-                        burger.append(addition)
+
+        if station_choice[0] == 'd':
+            # Drink Station ###############################################
+            print('You are at the Drink Station')
+            progress = 0
+            filled = False
+            while True: 
+                drink_choice = input("Sweet Tea or Water? ")
+                drink_choice = drink_choice.lower()
+                if drink_choice == 'sweet tea' or drink_choice == 'water':
+                    if not filled:
+                        input("Press enter to fill cup")
+                        print("Cup is filling")
+                        while True:
+                            time.sleep(3)
+                            input('Press enter to put top on cup')
+                            print('Cup is being prepared...')
+                            time.sleep(3)
+                            break
+                        print('Drink is done')
+                        time.sleep(0.75)
+                        filled = True
+                        prepared_food.append(drink_choice)
+                        break
                     else:
-                        progress += 1
-                        break
-            else:
-                print('Make sure to have a pattie cooked first!')
-                time.sleep(0.75)
-        print(burger)
-    if station_choice[0] == 'f':
-        pass
-    # Drink Station ###############################################
-    if station_choice[0] == 'd':
-        print('You are at the Drink Station')
-        progress = 0
-        filled = False
-        while True: 
-            drink_choice = input("Sweet Tea or Water? ")
-            drink_choice = drink_choice.lower()
-            if drink_choice == 'sweet tea' or drink_choice == 'water':
-                if not filled:
-                    input("Press enter to fill cup")
-                    print("Cup is filling")
-                    while True:
-                        time.sleep(3)
-                        input('Press enter to put top on cup')
-                        print('Cup is being prepared...')
-                        time.sleep(3)
-                        break
-                    print('Drink is done')
-                    break
-                    time.sleep(0.75)
-                    cooked = True
-                    progress += 1
-                else:
-                    print("Drink is already prepared")
-            else: 
-                print("Make sure the drink is prepared first!")
-                    
-
-           
-        
-
-                
+                        print("Drink is already prepared")
+                else: 
+                    print("Make sure we have that drink first!")
+    else:
+        print("Please choose one of the provided stations")
