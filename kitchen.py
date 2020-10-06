@@ -1,3 +1,78 @@
 # Burger station
+    # Burger patties will cook for 20 seconds
 # Frier station
-# Beverage station
+    # Frier takes 15 seconds to cook items
+# Drink station
+    # Only water for now
+
+import time
+
+# print('start')
+# begin = time.time()
+# input()
+# end = time.time()
+# elapsed = int(end - begin)
+# print(elapsed)
+# input()
+
+while True:
+    print("""Stations:
+- Burger Station
+- Frier Station
+- Drink Station
+    """)
+    station_choice = input('Which station do you need? ').lower()
+    if station_choice[0] == 'b':
+        # Burger station
+        print('You are at the Burger Station')
+        cooked = False
+        progress = 0
+        while True and progress < 2:
+            choice = input('Grill or Assembly? ')
+            choice = choice .lower()
+            if choice[0] == 'g':
+                if not cooked:
+                    input('Press Enter to start grilling')
+                    print('Pattie is cooking...')
+                    while True:
+                        time.sleep(10)
+                        input('Press Enter to flip pattie')
+                        time.sleep(10)
+                        print('Pattie is cooking...')
+                        break
+                    print('Pattie is done')
+                    cooked = True
+                    progress += 1
+                else:
+                    print('Pattie is already cooked')
+            if choice[0] == 'a':
+                burger = []
+                print("""Burger Ingredients:
+- top bun
+- mayonaise
+- onion
+- lettuce
+- tomato
+- cheese
+- pattie
+- pickles
+- mustard
+- bottom bun
+        """)
+                print('Assemble burger: (Type ingredients to add)')
+                print("Add ingredient or type 'q' to quit")
+                while True:
+                    addition = input()
+                    if addition != 'q':
+                        burger.append(addition)
+                    else:
+                        progress += 1
+                        break
+        print(burger)
+    if station_choice[0] == 'f':
+        pass
+    if station_choice[0] == 'd':
+        pass
+        
+
+                
