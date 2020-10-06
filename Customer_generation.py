@@ -20,7 +20,3 @@ def customer():
         if choice != 0:
             order.append(drinks[choice - 1])
     return order
-    order = customer()
-
-# if __name__ == "__main__":
-#     print(order)E
