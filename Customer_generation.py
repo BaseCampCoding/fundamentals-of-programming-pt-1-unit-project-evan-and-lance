@@ -1,15 +1,23 @@
 import random
 
-food_choices = ['hamburger', 'cheeseburger', 'fries', 'water']
+primary_food = ['hamburger', 'cheeseburger', 'chicken nuggets']
+secondary_food = ['fries']
+drinks = ['water']
+
 order = []
 
-while len(order) < 0:
-    for item in food_choices:
-        choice = random.randint(0,2)
-        if choice == 1:
-            order.append(item)
+while len(order) < 1:
+    choice = random.randint(0, len(primary_food))
+    if choice != 0:
+        order.append(primary_food[choice - 1])
 
-# This is an update
+    choice = random.randint(0, len(secondary_food))
+    if choice != 0:
+        order.append(secondary_food[choice - 1])
+
+    choice = random.randint(0, len(drinks))
+    if choice != 0:
+        order.append(drinks[choice - 1])
 
 if __name__ == "__main__":
     print(order)
