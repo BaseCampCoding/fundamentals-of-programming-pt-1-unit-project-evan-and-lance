@@ -38,28 +38,26 @@ while True:
                     while True:
                         time.sleep(10)
                         input('Press Enter to flip pattie')
-                        time.sleep(10)
                         print('Pattie is cooking...')
+                        time.sleep(10)
                         break
                     print('Pattie is done')
+                    time.sleep(0.75)
                     cooked = True
                     progress += 1
                 else:
                     print('Pattie is already cooked')
-            if choice[0] == 'a':
+            elif choice[0] == 'a' and cooked:
+                ingredients = [
+                    'top bun', 'mayonaise', 'onion', 'lettuce', 'tomato', 
+                    'cheese', 'pattie', 'pickles', 'mustard', 'bottom bun'
+                ]
                 burger = []
-                print("""Burger Ingredients:
-- top bun
-- mayonaise
-- onion
-- lettuce
-- tomato
-- cheese
-- pattie
-- pickles
-- mustard
-- bottom bun
-        """)
+                print('Burger Ingredients:')
+                for i in ingredients:
+                    print(f'- {i}')
+                    time.sleep(0.05)
+                time.sleep(0.25)
                 print('Assemble burger: (Type ingredients to add)')
                 print("Add ingredient or type 'q' to quit")
                 while True:
@@ -69,6 +67,9 @@ while True:
                     else:
                         progress += 1
                         break
+            else:
+                print('Make sure to have a pattie cooked first!')
+                time.sleep(0.75)
         print(burger)
     if station_choice[0] == 'f':
         pass
