@@ -15,6 +15,7 @@ import time
 # print(elapsed)
 # input()
 
+prepared_food = []
 while True:
     print("""Stations:
 - Burger Station
@@ -72,7 +73,8 @@ while True:
     if station_choice[0] == 'f':
         pass
     if station_choice[0] == 'd':
-        pass
+        print('You are at the Drink Station')
+        break
         
 
                 

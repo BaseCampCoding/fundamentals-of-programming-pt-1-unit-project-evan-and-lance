@@ -7,8 +7,8 @@ print("Welcome Chef", name.strip(), "Looks like there's a customer at the desk. 
 
 import Customer_generation
 
-order = str(Customer_generation.customer())[1:-1]
-print("Their order is written on this list: " + order.replace("'", ''))
+
+print(Customer_generation.customer)
 # while True: 
 #     cuisine_type = input("Breakfast, lunch, or dinner?: ")
 #     if cuisine_type.upper() == 'BREAKFAST':

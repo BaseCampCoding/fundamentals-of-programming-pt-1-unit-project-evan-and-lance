@@ -1,9 +1,9 @@
 import random
 
 def customer():
-    primary_food = ['hamburger', 'cheeseburger', 'chicken nuggets']
-    secondary_food = ['fries']
-    drinks = ['water']
+    primary_food = ["1 hamburger", '1 cheeseburger', '1 order of chicken nuggets']
+    secondary_food = ['1 order of fries']
+    drinks = ['1 water']
 
     order = []
 
@@ -20,8 +20,7 @@ def customer():
         if choice != 0:
             order.append(drinks[choice - 1])
     return order
+    order = customer()
 
-order = customer()
-
-if __name__ == "__main__":
-    print(order)
+# if __name__ == "__main__":
+#     print(order)E
