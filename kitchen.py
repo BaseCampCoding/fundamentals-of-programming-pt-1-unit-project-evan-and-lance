@@ -107,11 +107,11 @@ while True:
         if station_choice[0] == 'd':
             # Drink Station ###############################################
             print('You are at the Drink Station')
-            progress = 0
+            # progress = 0
             filled = False
             while True: 
-                drink_choice = input("Sweet Tea or Water? ")
-                drink_choice = drink_choice.lower()
+                drink_choice = input("Sweet Tea or Water? ").lower()
+                # drink_choice = drink_choice.lower()
                 if drink_choice == 'sweet tea' or drink_choice == 'water':
                     if not filled:
                         input("Press enter to fill cup")
