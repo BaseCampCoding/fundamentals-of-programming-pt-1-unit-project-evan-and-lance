@@ -3,17 +3,9 @@
 # Frier station
     # Frier takes 15 seconds to cook items
 # Drink station
-    # Only water for now
+    # Water or sweet tea
 
 import time
-
-# print('start')
-# begin = time.time()
-# input()
-# end = time.time()
-# elapsed = int(end - begin)
-# print(elapsed)
-# input()
 
 def kitchen(order: list) -> list:
     prepared_food = []
@@ -33,7 +25,7 @@ def kitchen(order: list) -> list:
         station_choice = input("Which station do you need? (Type 'c' to confirm order): ").lower()
         if len(station_choice) > 0:
             if station_choice[0] == 'b':
-                # Burger station
+    # Burger Station
                 print('You are at the Burger Station')
                 cooked = False
                 progress = 0
@@ -99,7 +91,7 @@ def kitchen(order: list) -> list:
                             time.sleep(0.75)
 
             if station_choice[0] == 'f':
-                # Frier station
+    # Frier Station
                 print('You are at the Frier Station')
                 fried = False
                 while True and not fried:
@@ -122,7 +114,7 @@ def kitchen(order: list) -> list:
                         time.sleep(0.75)
 
             if station_choice[0] == 'd':
-                # Drink Station ###############################################
+    # Drink Station
                 print('You are at the Drink Station')
                 filled = False
                 while True: 
