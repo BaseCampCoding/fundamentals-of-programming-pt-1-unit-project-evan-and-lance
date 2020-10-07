@@ -26,7 +26,7 @@ while True:
         print('You have prepared:')
         for i in prepared_food:
             print(f'- {i}')
-    station_choice = input("Which station do you need? (Type 'c' to confirm): ").lower()
+    station_choice = input("Which station do you need? (Type 'c' to confirm order): ").lower()
     if len(station_choice) > 0:
         if station_choice[0] == 'b':
             # Burger station
@@ -42,13 +42,13 @@ while True:
                             input('Press Enter to start grilling')
                             print('Pattie is cooking...')
                             while True:
-                                time.sleep(10)
+                                time.sleep(1)
                                 input('Press Enter to flip pattie')
                                 print('Pattie is cooking...')
-                                time.sleep(10)
+                                time.sleep(1)
                                 break
                             print('Pattie is done')
-                            time.sleep(0.75)
+                            time.sleep(0.25)
                             cooked = True
                             progress += 1
                         else:
@@ -76,10 +76,23 @@ while True:
                                     break
                             else:
                                 print('Please choose a valid ingredient')
+                        complete = False
+                        progress = 0
+                        for i in ingredients:
+                            if i != 'cheese':
+                                if i in burger:
+                                    progress += 1
+                                else:
+                                    print(f'You forgot the {i}!')
+                        if progress >= 9:
+                            complete = True
+                        if 'cheese' in burger and complete:
+                                prepared_food.append('cheeseburger')
+                        elif 'cheese' not in burger and complete:
+                                prepared_food.append('hamburger')
                     else:
                         print('Make sure to have a pattie cooked first!')
                         time.sleep(0.75)
-            prepared_food.append(burger)
 
         if station_choice[0] == 'f':
             # Frier station
