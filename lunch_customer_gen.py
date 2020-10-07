@@ -3,7 +3,7 @@ import random
 def customer():
     primary_food = ["1 hamburger", '1 cheeseburger', '1 order of chicken nuggets']
     secondary_food = ['1 order of fries']
-    drinks = ['1 water']
+    drinks = ['1 water', '1 sweet tea']
 
     order = []
 
