@@ -24,3 +24,4 @@
     - breadsticks
 - Add diffuculty settings
 - Add kitchen upgrades
+- Choose your own meal mode
