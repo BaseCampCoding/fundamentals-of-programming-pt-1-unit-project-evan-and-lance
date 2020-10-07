@@ -4,7 +4,7 @@ import lunch_customer_gen
 import lunch_kitchen
 import time
 
-def confirm_food(food: list) -> bool:
+def confirm_food() -> bool:
     while True:
         confirm = input('Are you ready to give this to the customer? ')
         if len(confirm) > 0:
@@ -21,7 +21,8 @@ name = input("What is your name?: ")
 
 print(f'Welcome Chef {name.strip()},')
 
-while True: 
+confirm = False
+while True and not confirm: 
     cuisine_type = input("Breakfast, lunch, or dinner?: ").lower()
     if len(cuisine_type) > 0:
         if cuisine_type[0] == 'b':
@@ -34,10 +35,12 @@ while True:
                 print(f'- {i}')
             input("Press Enter to start cooking ")
             begin = time.time()
-            food = lunch_kitchen.kitchen(order)
-            if confirm_food(food):
-                end = time.time()
-                break
+            while True:
+                food = lunch_kitchen.kitchen(order)
+                if confirm_food():
+                    end = time.time()
+                    confirm = True
+                    break
         elif cuisine_type[0] == 'd':
             pass
 
@@ -50,8 +53,6 @@ if True:
     print(elapsed)
     print(60 + (60 * len(order)))
     print('--------------')
-
-time.sleep(0.75)
 
 confirmation = 0
 for i in food:
@@ -75,6 +76,7 @@ elif correct_food == 'The customer got his food' and in_time == 'it was in time'
 else:
     between_word = 'but'
 
+print('')
 print(correct_food, between_word, in_time)
 if win:
     print('You Win!')
