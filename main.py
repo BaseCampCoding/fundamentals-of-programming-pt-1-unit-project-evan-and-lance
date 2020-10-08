@@ -1,7 +1,7 @@
 # main file to run
 
 import breakfast_customer_gen
-# import breakfast_kitchen
+import breakfast_kitchen_revised
 import lunch_customer_gen
 import lunch_kitchen
 import dinner_customer_gen
@@ -32,7 +32,18 @@ while True:
         if len(cuisine_type) > 0:
             if cuisine_type[0] == 'b':
                 # Breakfast
-                pass
+                order = breakfast_customer_gen.customer()
+                print("Here's a customer! Their order is written on this list: ")
+                for i in order:
+                    print(f'- {i}')
+                input("Press Enter to start cooking ")
+                begin = time.time()
+                while True:
+                    food = breakfast_kitchen_revised.kitchen(order)
+                    if confirm_food():
+                        end = time.time()
+                        confirm = True
+                        break
             elif cuisine_type[0] == 'l':
                 # Lunch
                 order = lunch_customer_gen.customer()
