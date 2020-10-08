@@ -3,7 +3,7 @@ import random
 def customer():
     primary_food = [
         'plain pancakes', 'buttered pancakes', 'blueberry pancakes', 
-        'strawberry pancakes', 'waffles'
+        'strawberry pancakes', 'bacon pancakes', 'waffles'
         ]
     secondary_food = ['1 toast', '1 sausage', '1 hashbrown', '1 bagel']
     drinks = ['1 orange juice', '1 tea', '1 coffee']

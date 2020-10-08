@@ -43,7 +43,7 @@ def kitchen(order: list) -> list:
                         print('Done!')
                         time.sleep(0.5)
                         if food_choice == 'pancakes':
-                            toppings = ['butter', 'blueberries', 'strawberries']
+                            toppings = ['butter', 'blueberries', 'strawberries', 'bacon']
                             pancake = []
                             print('Pancake Toppings:')
                             for i in toppings:
@@ -72,6 +72,9 @@ def kitchen(order: list) -> list:
                                 break
                             elif 'strawberries' in pancake:
                                 prepared_food.append('strawberry pancakes')
+                                break
+                            elif 'bacon' in pancake:
+                                prepared_food.append('bacon pancakes')
                                 break
                             else:
                                 prepared_food.append('plain pancakes')
