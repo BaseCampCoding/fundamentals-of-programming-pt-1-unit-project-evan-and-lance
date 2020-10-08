@@ -1,5 +1,7 @@
 # main file to run
 
+import breakfast_customer_gen
+import breakfast_kitchen
 import lunch_customer_gen
 import lunch_kitchen
 import dinner_customer_gen
@@ -29,6 +31,7 @@ while True:
         cuisine_type = input("Breakfast, lunch, or dinner?: ").lower()
         if len(cuisine_type) > 0:
             if cuisine_type[0] == 'b':
+                # Breakfast
                 pass
             elif cuisine_type[0] == 'l':
                 # Lunch
@@ -45,6 +48,7 @@ while True:
                         confirm = True
                         break
             elif cuisine_type[0] == 'd':
+                # Dinner/Supper
                 order = dinner_customer_gen.customer()
                 print("Here's a customer! Their order is written on this list: ")
                 for i in order:
