@@ -1,7 +1,7 @@
 # main file to run
 
 import breakfast_customer_gen
-import breakfast_kitchen_revised
+import breakfast_kitchen
 import lunch_customer_gen
 import lunch_kitchen
 import dinner_customer_gen
@@ -39,7 +39,7 @@ while True:
                 input("Press Enter to start cooking ")
                 begin = time.time()
                 while True:
-                    food = breakfast_kitchen_revised.kitchen(order)
+                    food = breakfast_kitchen.kitchen(order)
                     if confirm_food():
                         end = time.time()
                         confirm = True
@@ -75,7 +75,7 @@ while True:
 
     elapsed = int(end - begin)
 
-    if True:
+    if False:
         print('---dev_info---')
         print(order)
         print(food)
