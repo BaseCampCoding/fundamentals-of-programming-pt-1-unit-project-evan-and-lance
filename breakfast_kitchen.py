@@ -36,8 +36,6 @@ while True:
                     print("Hashbrowns are already cooked.")
             elif skillet_or_assembly.strip().lower() == 'assembly':
                 print("cool")
-            else: 
-                print("Make sure to have your Hashbrowns ready!")
             pancake_toppings = [
                 'Butter', 'Blueberries', 'Strawberries'
             ]
@@ -45,7 +43,16 @@ while True:
             sausage_toppings = [
                 'Syrup', 'Gravy', 
             ]
+            print("Pancake Toppings")
+            if breakfast_item_tocook.lower() == "pancakes":
+             for i in pancake_toppings:
+                print(f'- {i}')
+                time.sleep(0.25)
+            print('Assemble Pancakes: (Type toppings to add)')
+            print("Add toppings or type 'c' to confirm")
             sausage = []
+            
+           
           ## Toaster Station ####
     elif station_choice[0] == 't':
         print("You are in the toaster station")
