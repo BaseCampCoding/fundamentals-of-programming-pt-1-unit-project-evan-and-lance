@@ -2,6 +2,8 @@
 
 import lunch_customer_gen
 import lunch_kitchen
+import dinner_customer_gen
+import dinner_kitchen
 import time
 
 def confirm_food() -> bool:
@@ -42,7 +44,18 @@ while True and not confirm:
                     confirm = True
                     break
         elif cuisine_type[0] == 'd':
-            pass
+            order = dinner_customer_gen.customer()
+            print("Here's a customer! Their order is written on this list: ")
+            for i in order:
+                print(f'- {i}')
+            input("Press Enter to start cooking ")
+            begin = time.time()
+            while True:
+                food = dinner_kitchen.kitchen(order)
+                if confirm_food():
+                    end = time.time()
+                    confirm = True
+                    break
 
 elapsed = int(end - begin)
 
