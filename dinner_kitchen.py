@@ -69,13 +69,91 @@ def kitchen(order: list) -> list:
                     prepared_food.append('1 cheese pizza')
 
             if station_choice[0] == 'g':
-                pass
+                print('You are at the Grill Station')
+                while True:
+                    items = ['steak', 'ribs', 'baked potato']
+                    print('Foods to grill:')
+                    for i in items:
+                        print(f'- {i}')
+                        time.sleep(0.05)
+                    food_choice = input('What do you need to grill? ').lower()
+                    if food_choice == 'baked potato':
+                        print(f'Grilling {food_choice}...')
+                        time.sleep(20)
+                        print('Done!')
+                        time.sleep(0.5)
+                        prepared_food.append('1 baked potato')
+                        break
+                    elif food_choice in items:
+                        print(f'Grilling {food_choice}...')
+                        time.sleep(10)
+                        input('Press Enter to flip')
+                        print(f'Grilling {food_choice}...')
+                        time.sleep(10)
+                        print('Done!')
+                        time.sleep(0.5)
+                        if food_choice == 'steak':
+                            prepared_food.append('1 steak')
+                            break
+                        elif food_choice == 'ribs':
+                            prepared_food.append('a serving of ribs')
+                            break
+                    else:
+                        print("We don't have that")
+                        time.sleep(0.75)
+
             if station_choice[0] == 's':
-                pass
+                print('You are at the Grill Station')
+                while True:
+                    items = ['green peas', 'mashed potatoes', 'corn', 'broccoli']
+                    print('Foods to cook:')
+                    for i in items:
+                        print(f'- {i}')
+                        time.sleep(0.05)
+                    food_choice = input('What do you need to cook? ').lower()
+                    if food_choice in items:
+                        print(f'Cooking {food_choice}...')
+                        time.sleep(15)
+                        print('Done!')
+                        time.sleep(0.5)
+                        prepared_food.append(f'a side of {food_choice}')
+                        break
+                    else:
+                        print("We don't have that")
+                        time.sleep(0.75)
             if station_choice[0] == 'd':
-                pass
+                print('You are at the Drink Station')
+                filled = False
+                while True: 
+                    drinks = ['water', 'sweet tea', 'chocolate milk']
+                    print('Drinks to dispense:')
+                    for i in drinks:
+                        print(f'- {i}')
+                    drink_choice = input("What drink do you want? ").lower()
+                    if drink_choice in drinks:
+                        if not filled:
+                            input("Press enter to fill cup")
+                            print("Cup is filling")
+                            while True:
+                                time.sleep(3)
+                                input('Press enter to put top on cup')
+                                print('Cup is being prepared...')
+                                time.sleep(2)
+                                break
+                            print('Drink is done')
+                            time.sleep(0.75)
+                            filled = True
+                            prepared_food.append(f'1 {drink_choice}')
+                            break
+                        else:
+                            print("Drink is already prepared")
+                    else: 
+                        print("Make sure we have that drink first!")
+                        time.sleep(0.5)
             if station_choice[0] == 'c':
                 return prepared_food
+        else:
+            print("Please choose one of the provided stations")
 
 if __name__ == "__main__":
     print(kitchen(['pizza', 'yeet']))
