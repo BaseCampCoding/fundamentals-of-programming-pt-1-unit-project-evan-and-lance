@@ -16,7 +16,9 @@ customer's order in a timely fashion. To start the game, run "main.py"
 - Unique food and drinks for each level
 - Replay function at game end
 
-## File Purposes
+## Usage
+
+### File Purposes
 **Main.py**: The control center. Ties together all other files and contains 
 logic to determine if the player wins
 
@@ -28,3 +30,10 @@ would cook each food item.
 
 **"_customer_gen.py" Files**: Each level has its own _customer_gen file. This 
 is where the program generates a random order for the customer.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to 
+discuss what you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
