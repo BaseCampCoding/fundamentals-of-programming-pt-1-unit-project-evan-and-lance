@@ -118,8 +118,12 @@ def kitchen(order: list) -> list:
                 print('You are at the Drink Station')
                 filled = False
                 while True: 
-                    drink_choice = input("Sweet Tea or Water? ").lower()
-                    if drink_choice == 'sweet tea' or drink_choice == 'water':
+                    drinks = ['water', 'sweet tea']
+                    print('Drinks to dispense:')
+                    for i in drinks:
+                        print(f'- {i}')
+                    drink_choice = input("What drink do you want? ").lower()
+                    if drink_choice in drinks:
                         if not filled:
                             input("Press enter to fill cup")
                             print("Cup is filling")
@@ -127,7 +131,7 @@ def kitchen(order: list) -> list:
                                 time.sleep(3)
                                 input('Press enter to put top on cup')
                                 print('Cup is being prepared...')
-                                time.sleep(3)
+                                time.sleep(2)
                                 break
                             print('Drink is done')
                             time.sleep(0.75)
@@ -138,6 +142,7 @@ def kitchen(order: list) -> list:
                             print("Drink is already prepared")
                     else: 
                         print("Make sure we have that drink first!")
+                        time.sleep(0.5)
             if station_choice[0] == 'c':
                 return prepared_food
         else:
