@@ -28,6 +28,7 @@ def kitchen(order: list) -> list:
         station_choice = input("Which station do you need? (Type 'c' to confirm order): ").lower()
         if len(station_choice) > 0:
             if station_choice[0] == 'p':
+    # Pizza Station
                 print("You are at the Pizza Station")
                 ingredients = [
                     'dough', 'tomato sauce', 'cheese', 'pepperoni', 'sausage'
@@ -69,6 +70,7 @@ def kitchen(order: list) -> list:
                     prepared_food.append('1 cheese pizza')
 
             if station_choice[0] == 'g':
+    # Grill Station
                 print('You are at the Grill Station')
                 while True:
                     items = ['steak', 'ribs', 'baked potato']
@@ -103,7 +105,8 @@ def kitchen(order: list) -> list:
                         time.sleep(0.75)
 
             if station_choice[0] == 's':
-                print('You are at the Grill Station')
+    # Stove Station
+                print('You are at the Stove Station')
                 while True:
                     items = ['green peas', 'mashed potatoes', 'corn', 'broccoli']
                     print('Foods to cook:')
@@ -122,6 +125,7 @@ def kitchen(order: list) -> list:
                         print("We don't have that")
                         time.sleep(0.75)
             if station_choice[0] == 'd':
+    # Drink Station
                 print('You are at the Drink Station')
                 filled = False
                 while True: 
