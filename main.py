@@ -23,6 +23,10 @@ def confirm_food() -> bool:
 
 name = input("What is your name?: ")
 
+demo = 1.0
+if name == 'demo':
+    demo = 0.1
+
 print(f'Welcome Chef {name.strip()},')
 
 while True:
@@ -39,7 +43,7 @@ while True:
                 input("Press Enter to start cooking ")
                 begin = time.time()
                 while True:
-                    food = breakfast_kitchen.kitchen(order)
+                    food = breakfast_kitchen.kitchen(order, demo)
                     if confirm_food():
                         end = time.time()
                         confirm = True
@@ -53,7 +57,7 @@ while True:
                 input("Press Enter to start cooking ")
                 begin = time.time()
                 while True:
-                    food = lunch_kitchen.kitchen(order)
+                    food = lunch_kitchen.kitchen(order, demo)
                     if confirm_food():
                         end = time.time()
                         confirm = True
@@ -67,7 +71,7 @@ while True:
                 input("Press Enter to start cooking ")
                 begin = time.time()
                 while True:
-                    food = dinner_kitchen.kitchen(order)
+                    food = dinner_kitchen.kitchen(order, demo)
                     if confirm_food():
                         end = time.time()
                         confirm = True

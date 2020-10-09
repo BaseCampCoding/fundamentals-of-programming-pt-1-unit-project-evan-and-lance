@@ -7,7 +7,7 @@
 
 import time
 
-def kitchen(order: list) -> list:
+def kitchen(order: list, demo: float) -> list:
     prepared_food = []
     while True:
         print("\nCustomer's order:")
@@ -30,10 +30,10 @@ def kitchen(order: list) -> list:
                 time.sleep(0.5)
                 input('Press Enter to start grilling pattie')
                 print('Pattie is cooking...')
-                time.sleep(10)
+                time.sleep(10 * demo)
                 input('Press Enter to flip pattie')
                 print('Pattie is cooking...')
-                time.sleep(10)
+                time.sleep(10 * demo)
                 print('Pattie is done')
                 time.sleep(0.25)
                 ingredients = [
@@ -87,7 +87,7 @@ def kitchen(order: list) -> list:
                     food_choice = input('What do you need to fry? ').lower()
                     if food_choice in items:
                         print(f'Frying {food_choice}...')
-                        time.sleep(15)
+                        time.sleep(15 * demo)
                         print('Done!')
                         time.sleep(0.5)
                         fried = True
@@ -112,10 +112,10 @@ def kitchen(order: list) -> list:
                             input("Press enter to fill cup")
                             print("Cup is filling")
                             while True:
-                                time.sleep(3)
+                                time.sleep(3 * demo)
                                 input('Press enter to put top on cup')
                                 print('Cup is being prepared...')
-                                time.sleep(2)
+                                time.sleep(2 * demo)
                                 break
                             print('Drink is done')
                             time.sleep(0.75)
