@@ -50,6 +50,8 @@ def kitchen(order: list, demo: float) -> list:
                             break
                     else:
                         print('Please choose a valid ingredient')
+                print('Cooking Pizza...')
+                time.sleep(20 * demo)
                 complete = False
                 progress = 0
                 for i in ingredients:
