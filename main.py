@@ -40,6 +40,9 @@ while True:
                 print("Here's a customer! Their order is written on this list: ")
                 for i in order:
                     print(f'- {i}')
+                timer = 60 + (60 * len(order))
+                timer_display = timer / 60
+                print(f'The customer expects his order in {timer_display:.1f} minutes or less\n')
                 input("Press Enter to start cooking ")
                 begin = time.time()
                 while True:
@@ -95,7 +98,7 @@ while True:
         correct_food = 'The customer got his food'
     else:
         correct_food = 'The customer did not get his food'
-    if elapsed < 60 + (60 * len(order)):
+    if elapsed < timer:
         in_time = 'it was in time'
     else:
         in_time = 'it was not in time'
