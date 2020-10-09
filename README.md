@@ -8,7 +8,7 @@ based kitchen tycoon. Instead of being a visual game, we made it text based.
 Our program can serve breakfast, lunch, and dinner; each with their own 
 "_kitchen.py" files and "_customer_gen.py" files. The player will recieve the 
 customer's order, and will have to run through the kitchen to make the 
-customer's order in a timely fashion. To start the game, run "main.py"
+customer's order in a timely fashion.
 
 ## Features
 - Breakfast, lunch, and dinner levels
@@ -17,6 +17,7 @@ customer's order in a timely fashion. To start the game, run "main.py"
 - Replay function at game end
 
 ## Usage
+To start the game, run "main.py"
 
 ### File Purposes
 **Main.py**: The control center. Ties together all other files and contains 
