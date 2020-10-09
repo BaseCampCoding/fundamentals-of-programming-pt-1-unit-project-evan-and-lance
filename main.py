@@ -57,6 +57,9 @@ while True:
                 print("Here's a customer! Their order is written on this list: ")
                 for i in order:
                     print(f'- {i}')
+                timer = 60 + (60 * len(order))
+                timer_display = timer / 60
+                print(f'The customer expects his order in {timer_display:.1f} minutes or less\n')
                 input("Press Enter to start cooking ")
                 begin = time.time()
                 while True:
@@ -71,6 +74,9 @@ while True:
                 print("Here's a customer! Their order is written on this list: ")
                 for i in order:
                     print(f'- {i}')
+                timer = 60 + (60 * len(order))
+                timer_display = timer / 60
+                print(f'The customer expects his order in {timer_display:.1f} minutes or less\n')
                 input("Press Enter to start cooking ")
                 begin = time.time()
                 while True:
