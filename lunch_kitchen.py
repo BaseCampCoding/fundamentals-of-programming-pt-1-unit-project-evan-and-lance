@@ -64,6 +64,7 @@ def kitchen(order: list, demo: float) -> list:
                             progress += 1
                         else:
                             print(f'You forgot the {i}!')
+                complete = False
                 if progress >= 9:
                     complete = True
                 if 'cheese' in burger and complete:
